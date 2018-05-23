@@ -1,0 +1,184 @@
+Foundation for emails
+
+Официальный сайт
+https://foundation.zurb.com/emails.html
+
+Документация
+https://foundation.zurb.com/emails/docs/
+
+Поддержка mail-клиентами
+https://foundation.zurb.com/emails/docs/compatibility.html
+
+Онлайн инлайнер
+https://foundation.zurb.com/emails/inliner-v2.html
+
+Kilogram
+https://github.com/dudeonthehorse/kilogram
+
+_______________________________________________
+
+1. Официальный сайт
+   https://foundation.zurb.com/emails.html
+
+2.  Поддержка mail-клиентами
+    https://foundation.zurb.com/emails/docs/compatibility.html
+
+    Do progressively enhance. ZURB and Foundation for Emails builds Outlook-first
+
+
+3. Документация
+   https://foundation.zurb.com/emails/docs/
+
+________CSS version________
+
+4. Скачать
+
+5. Boilerplate - шаблон - index.html
+
+6. Container - главный коонтейнер,  width: 580px;
+
+    <table class="container">
+      <tr>
+        <td></td>
+      </tr>
+    </table>
+
+7. Row - ряд, который вмещает в себя колонки
+
+    <table class="row">
+      <tr>
+        <th></th>
+      </tr>
+    </table>
+
+8. Columns - колонки. 2 Размера small-(1-12), large-(1-12)
+    .first - задают паддинги по краям
+    .last - задают паддинги по краям
+
+    <table class="row">
+      <tr>
+        <th class="small-12 large-6 first columns">
+          Column One
+        </th>
+        <th class="small-12 large-6 last columns">
+          Column Two
+        </th>
+        <th class="expander"></th>
+      </tr>
+    </table>
+
+    .expander предотвращает ошибку рендеринга в Outlook
+
+
+
+
+
+    Стили по-умолчанию
+
+    <table class="row">
+      <tr>
+        <th class="small-12 large-6 first columns">
+          <span>Hello! I'm span</span>
+        </th>
+        <th class="small-12 large-6 last columns">
+          <p>Hello! I'm paragraph</p>
+        </th>
+        <th class="expander"></th>
+      </tr>
+    </table>
+
+9. Web inliner
+    html
+    css from foundation-emails.css
+
+10. Скомпилированный html:
+    1) reformat code (проанализировать)
+    2) Отправить по почте
+    3) Проанализировать адаптивность - не меньше 580px
+        Медиа запросы работают только там, где поддерживаются (thunderbird)
+
+11. Смотрим существующие шаблоны, basic.html
+12. Переопределям стили гридов
+       1)
+           center {
+               min-width: 320px;
+           }
+
+           table.container {
+               width: 100%;
+               max-width: 780px;
+           }
+
+       2) Проанализировать адаптивность - gmail/apple native/Outlook/Outlook desktop
+
+        Outlook desktop
+        http://joxi.ru/12Mgn5Qi4pOkKr
+        http://joxi.ru/EA4dG4pHDL9pYA
+
+        gmail
+        http://joxi.ru/52aX9BQTGLnbMm
+        http://joxi.ru/KAxpDJ5c4dQKnA
+
+        thunderbird
+        http://joxi.ru/DmBg5ZEiN9QzD2
+        http://joxi.ru/5md1VBWcvj5eG2
+
+
+
+
+________Saas version________
+
+1. https://foundation.zurb.com/emails/docs/sass-guide.html
+    В коробке:
+        Inky HTML
+        Sass
+        Handlebars templates
+        BrowserSync
+        Image compression
+        Inlining
+
+2. Установка (нужен node.js)
+    - Foundation CLI
+        npm install --global foundation-cli
+
+    - go to project dir
+
+    - foundation new --framework emails
+
+    - дать имя
+
+    - cd emails_project_name
+
+    - npm start
+
+
+    Issue
+    https://github.com/zurb/foundation-cli/issues/99
+3. Структура
+
+    assets/: Sass and image files.
+    layouts/: Boilerplate HTML that wraps all of your emails.
+    pages/: HTML files for emails.
+    partials/: Reusable chunks of HTML that can be injected into pages.
+    dist/: results
+
+4. Boilerplate в src/layouts/default.html
+    local server - src/layouts/default.html
+5. Grid
+
+    <container>
+      <row>
+        <columns small="12" large="6">Column One</columns>
+        <columns small="12" large="6">Column Two</columns>
+      </row>
+    </container>
+
+6. npm start - разработка
+   npm run build - компилирование в /dist
+
+6. Проанализировать скомпилированный код
+
+7. Вкратце о компонентах
+       https://foundation.zurb.com/emails/docs/alignment.html
+
+
